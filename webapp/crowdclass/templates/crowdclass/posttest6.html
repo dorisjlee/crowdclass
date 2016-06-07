@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">
+                 Which of the following property of galactic bulges is true?
+                 </h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:posttest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">Galactic bulges is not intrinsic to spiral galaxies. They are an image artifact from observing a round galaxy overlapping with the elliptical galaxy in the background.<br>
+          <input type="radio" name="choice" value="1">Central bulges of spiral galaxies are made of lots of old, red, metal-poor stars that orbits around the galactic core. <br>
+          <input type="radio" name="choice" value="-1">A possible explanation for the galactic bulges is that they are due to galaxy mergers in which the larger host galaxy incorporates a small round elliptical galaxy to its center after the collision occurs. <br>
+          <input type="radio" name="choice" value="-1">There is a correlation between the size of galactic bulges and the color of the galaxy.<br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+
+
+

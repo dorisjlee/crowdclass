@@ -1,0 +1,6 @@
+library(effsize)
+ dataA <- c(5,7,9,5,10,10,9,7,8,10,9,8,2,8,10,3,8,1,9,10,10,4,9,7,8,10,8) 
+dataB <- c(10,8,6,7,10,9,10,9,8,9,10,8,10,8,7,8,8,10,9,9,10) 
+ks.test(dataA,dataB) 
+cohen.d(dataA,dataB) 
+cohen.d(dataA,dataB,hedges.correction=TRUE) 

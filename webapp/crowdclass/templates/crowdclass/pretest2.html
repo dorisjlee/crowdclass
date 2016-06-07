@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">Which of the following statement about galaxy mergers is true?</h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">When galaxies merge, most of the stars within a galaxy collide with stars from the other galaxy.<br>
+          <input type="radio" name="choice" value="-1">Galaxy collisions are rare events that don't happen very frequently throughout the universe's history.<br>
+          <input type="radio" name="choice" value="-1">Since galaxies are so large, collisions with other galaxies have very little influence on its shape and features.<br>
+          <input type="radio" name="choice" value="1">When galaxies merge, the turbluent gas inflowing into the interaction region injects extra energy goes into triggering new stars to form. <br>
+          <input type="radio" name="choice" value="?">I don't know<br>
+          <br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+

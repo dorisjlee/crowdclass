@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">Which of the following statement about tidal debris is true?</h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:posttest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">
+          Tidal debris is due to the highly active active-galactic centers that ejects out the unnecessary dust and gas that the galaxy does not need to survive.<br>
+          <input type="radio" name="choice" value="-1">
+          The name "tidal debris" comes from the fact that stellar interactions within a galaxy produce irregular, often tail-like, structure that often look like ocean waves and tides.<br>
+          <input type="radio" name="choice" value="1">
+          When galaxies come too close to one another, their gravitational forces on each other deflects the individual trajectories of each star in a dynamical process called "relaxation".<br>
+          <input type="radio" name="choice" value="-1">
+          In a tidal interaction, we see that stars in a galaxies continue to smoothly orbit around the center of the galaxy without any disruption.<br>
+          <input type="radio" name="choice" value="?">
+          I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+

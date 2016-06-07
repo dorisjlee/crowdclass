@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/file2_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   <title>Galaxt Zoo</title>
+  </head>
+  <body>
+<div class="help">
+      <h1 class="heading">Help</h1>
+      <p class="text">
+        Look carefully for spiral arms — remember they may be embedded in the disk and not that easy to see. Click on the images to see larger examples.
+
+      </p>
+      <div class="examples">
+        <h3 class="sub-heading">Example</h3>
+          <div class="row">
+            <ul>
+              <li>
+                <img src="{% static "crowdclass/images/yes0.png"%}" alt="samlesmooth">
+                <h4>Yes</h4>
+              </li>
+              <li>
+                <img src="{% static "crowdclass/images/spiral01.png"%}" alt="smooth">
+              </li>
+              <li>
+                <img src="{% static "crowdclass/images/spiral02.png"%}" alt="smooth">
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <ul>
+              <li>
+                <img src="{% static "crowdclass/images/no0.png"%}" alt="samlesmooth">
+                <h4>No</h4>
+              </li>
+              <li>
+              </li>
+              <li>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

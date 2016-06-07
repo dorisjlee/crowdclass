@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">Which of the following statement about elliptical galaxies is true?</h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">Ellipticals are made of young, blue stars.<br>
+          <input type="radio" name="choice" value="1">Ellipticals are galaxies that lost their structures through collisions with other galaxies.<br>
+          <input type="radio" name="choice" value="-1">Ellipticals are made of very round stars that tend to cluster together to form round shapes.<br>
+          <input type="radio" name="choice" value="-1">Ellipticals galaxies have high rates of star formation.<br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+

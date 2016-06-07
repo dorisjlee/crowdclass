@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">The first, widely-used galaxy morphology classification scheme was developed by:  </h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="1">Edwin Hubble <br>
+          <input type="radio" name="choice" value="-1">Stephen Hawking <br>
+          <input type="radio" name="choice" value="-1">Arthur Eddington <br>
+          <input type="radio" name="choice" value="-1">Edmond Halley <br>
+          <input type="radio" name="choice" value="?">I don't know<br>
+          <br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+body{
+  background-color: black;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6 {
+  padding: 10px 0;
+  margin: 0;
+}
+
+p{
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+  margin: 0;
+}
+
+.header{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0 0 15px 0;
+  padding: 0 0 0 2;
+}
+
+.next{
+  background-image: url("images/next.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 95px;
+  height:95px;
+  display: block;
+  position: relative;
+  margin: 20 35 0 30;
+  float:left;
+  border:0px;
+}
+
+.survey{
+  background-image: url("images/survey.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 95px;
+  height:95px;
+  display: block;
+  position: relative;
+  margin: 20 35 0 30;
+  float:left;
+  border:0px;
+}
+
+
+.main{
+  width:80%;
+  margin-left: 100px;
+  border:1px;
+  border-style: solid;
+  border-color: #003c57;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.main .question{
+  font-size: 18px;
+  color: white;
+  margin-left: 10px;
+}
+
+.radiobuttons{
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-size: 15px;
+  margin:20px;
+  margin-left: 10px;
+  color: white;
+  text-align: left;
+}
+
+.footer{
+  width:100%;
+  height:100px;
+  margin:20px;
+}
+
+.footer_left{
+  width:950px;
+  height:70px;
+  float:left;
+}
+ul{
+ margin: 0px;
+}
+
+.footer_right{
+  width:100px;
+  height:70px;
+  float:right;
+}

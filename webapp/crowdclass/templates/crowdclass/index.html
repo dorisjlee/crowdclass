@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+         <h2 class="heading"> Instructions </h2>
+         The study involves an 30 minute long session where you will be asked to interact with a software interface of a citizen science platform. You can do the study remotely anywhere with good internet connection, but we ask that you allocate <u><d>an undisturbed environment for 30 minutes</b></u>. Your valuable classifications in this citizen science platform will be used by scientists to study how these galaxies formed. Please answer the questions that you are prompted with in the software <u><b>without</b></u> searching the web or books for reference.
+        <br>
+        <br> Please feel free to make use of the buttons during the experiment to assist you with the task: 
+        <ul style="list-style: none; margin-top: 10px">
+        <li> <img src="{% static "crowdclass/images/hint.png" %}" alt="hint" ><span style="top:-10px; position:relative;"> : Displays hints on how to answer the question asked. </span></li> 
+        <li> <img src="{% static "crowdclass/images/Examples.png" %}" alt="examples"><span style="top:-10px; position:relative;"> : Displays example images of what classification types look like. </span> </li> 
+        <li> <img src="{% static "crowdclass/images/Restart.png" %}" alt="restart"><span style="top:-10px; position:relative;"> : If you think that you made a mistake, this button brings you back to the first classification question for this image. </span></li> 
+        </ul>
+		{% if error_message %}
+		<h3><strong>{{ error_message }}</strong></h3>
+		{% else %}
+		<h3>Please enter the access code given to you by email to begin:</h3>
+		{% endif %}
+		<div>
+		<form action="{% url 'crowdclass:create_user'%}" method="POST">
+				{% csrf_token %}
+				<textarea name='uid' id='uid' maxlength="500"></textarea>
+				<input type="submit" value="login" />
+			</form>
+		</div>
+    
+      </div>
+    </div>
+       
+       
+  </body>
+</html>

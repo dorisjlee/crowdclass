@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">
+                 Which of the following statement regarding galaxy morphology and their associated properties is true?
+                 </h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">Sprial galaxies are formed by collisions of many galaxies.<br>
+          <input type="radio" name="choice" value="1">Tidal debris results from the differential force between one part of the galaxy and another part of the galaxy.<br>
+          <input type="radio" name="choice" value="-1">Spiral arms of galaxies contain old, red stars that are undergoing very little star formation activity.<br>
+          <input type="radio" name="choice" value="-1">We can identify the shape of a galaxy based on the spectra data at different wavelengths.<br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+
+
+

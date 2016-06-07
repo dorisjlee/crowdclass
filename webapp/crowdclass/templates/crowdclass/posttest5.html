@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">
+                 Dust lane:
+                 </h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:posttest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="1">contains dark streak seen near the disk of the galaxy of cold molecular gas.<br>
+          <input type="radio" name="choice" value="-1">contains bright streaks seen near the disk of the galaxy of hot atomic gas. <br>
+          <input type="radio" name="choice" value="-1">is a phenomenon that results from the formation of dust stripes across the telescope lens.<br>
+          <input type="radio" name="choice" value="-1">is a phenomenon that results from light passing through the dusty regions of the Earth's atmosphere. <br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+
+
+

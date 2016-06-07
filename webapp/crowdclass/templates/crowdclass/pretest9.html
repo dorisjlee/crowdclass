@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">
+                 Which of the following statement about spiral galaxies is NOT true?
+                 </h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+          <input type="radio" name="choice" value="-1">Spiral arms contain lots of gas and dust to fuel the formation of young, blue, new stars.<br>
+          <input type="radio" name="choice" value="-1">The central bulges of spiral galaxies are mostly made of old, red stars.<br>
+          <input type="radio" name="choice" value="1">Spiral arms are non-rotating, static structures that are intrinsically fixed to the spiral galaxy.<br>
+          <input type="radio" name="choice" value="-1">When a galaxy is viewed edge-on, it can be hard to tell whether the galaxy is spiral or not.<br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+
+
+

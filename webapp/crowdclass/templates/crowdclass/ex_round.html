@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/file2_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   <title>Galaxt Zoo</title>
+  </head>
+  <body>
+     <div class="help">
+        <h1 class="heading">Help</h1>
+        <p class="text">
+          Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click on the images to see larger examples."
+        </p>
+        <div class="examples">
+          <h3 class="sub-heading">Example</h3>
+            <div class="row">
+              <ul>
+                <li>
+                  <img src="{% static "crowdclass/images/completely0.png" %}" alt="samlecompletely">
+                  <h5>Completely Round</h5>
+                </li>
+                <li>
+                  <img src="{% static "crowdclass/images/completely01.png" %}" alt="completely">
+                </li>
+                <li>
+                  <img src="{% static "crowdclass/images/completely02.png" %}" alt="completely">
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <ul>
+                <li>
+                  <img src="{% static "crowdclass/images/between0.png" %}"  alt="samlesmooth">
+                  <h4>In Between</h4>
+                </li>
+                <li>
+                  <img src="{% static "crowdclass/images/between01.png" %}" alt="smooth">
+                </li>
+                <li>
+                  <img src="{% static "crowdclass/images/between02.png" %}" alt="smooth">
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/content_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+    <div class="header">
+    </div>
+    <div class="main">
+      <div class="left_content">
+        <div class="image">
+          <img src="{% static image %}" alt="Galaxy" >
+        </div>
+        <div class="caption">
+        {% if caption %}
+        {{ caption }}
+        {% endif %}
+        </div>
+      </div>
+      <div class="right_content">
+      <h1>Ellipticals</h1>
+        <div class="description">
+            {{ description }}
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+        <div class="footer_left">
+        </div>
+        <div class="footer_right">
+<a href="{% url 'crowdclass:to_elliptical' elliptical.id pid %}"><img src="{% static "crowdclass/images/next.png" %}" alt="restart"></a>
+        </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+{% load staticfiles %}
+{% if level == 0 %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+    <div class="header">
+     <!--  I used the first question inside pretest.txt as an example -->
+      <!-- <h1>Easy<h1> -->
+       <!--  Tags are here. -->
+    </div>
+    <div class="main">
+      <div class="question">
+        <p>
+        Welcome!
+        <br> In this module, you will be learning about the properties of an elliptical and spiral galaxy.
+        <div class="footer_right">
+          <a href="{% url 'crowdclass:introduction' %}"><img src="{% static "crowdclass/images/next.png" %}" ></a> 
+        </div>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% elif level == 1 %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+    <div class="header">
+     <!--  I used the first question inside pretest.txt as an example -->
+      <!-- <h1>Medium<h1> -->
+       <!--  Tags are here. -->
+    </div>
+    <div class="main">
+      <div class="question">
+        <p>
+        Congratulations! You have now mastered the beginner's level.</br>
+        In this new module, we will be learning about galaxy dynamics, including:
+        <ul>
+         <li>what explains the bright bulge  at the center of a spiral galaxy</li>
+         <li>what types of interactions occur when galaxies get too close to each other</li>
+         <li>what happens when galaxies merge with one another</li>
+        </ul>
+        <div class="footer_right">
+          <a href="{% url 'crowdclass:introduction' %}"><img src="{% static "crowdclass/images/next.png" %}" ></a> 
+        </div>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+{% else %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+    <div class="header">
+     <!--  I used the first question inside pretest.txt as an example -->
+      <!-- <h1>Hard<h1> -->
+       <!--  Tags are here. -->
+    </div>
+    <div class="main">
+      <div class="question">
+        <p>
+        Congratulations! You have now mastered the medium difficulty level.</br>
+        In this new module, we will be learning about odd features in galaxies, including:
+        <ul>
+        <li>what is gravitational lensing? why do we see them?</li>
+        <li>what is a dust lane galaxy? what are their properties?</li>
+        </ul>
+        <div class="footer_right">
+          <a href="{% url 'crowdclass:introduction' %}"><img src="{% static "crowdclass/images/next.png" %}" ></a> 
+        </div>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+{% endif %}

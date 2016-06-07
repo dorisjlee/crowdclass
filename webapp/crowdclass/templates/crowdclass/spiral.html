@@ -1,0 +1,78 @@
+
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+    <link media="screen" rel="stylesheet" href="{% static 'crowdclass/colorbox.css' %}">
+    <script src="{% static 'crowdclass/jquery-1.12.2.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'crowdclass/jquery.colorbox-min.js' %}"  type="text/javascript"></script>
+    <script>
+    $(document).ready(function(){
+      $(".iframe").colorbox({
+        iframe:true,
+        width:"800px",
+        height:"50%"
+      });
+    });
+    </script>
+
+
+  </head>
+  <body>
+    </div>
+    <div id="main">
+      <div id="classify">
+        <div id="galaxy">
+          <img src="{% static pic %}" alt="Galaxy">
+        </div>
+        <div id= "tree">
+          <div id="top">
+              <h1 class="heading">Classify</h1>
+              <ul class="bottons"style="list-style:none">
+                <li class="right">
+                  <a class="iframe" href= "{% url 'crowdclass:hint' spiral.id 'spiral' pid %}" class="iframe" name="iframe" width ="600" height="300" style="background: white;"><img src="{% static "crowdclass/images/hint.png" %}" alt="hint"></a>
+                </li>
+                <li class="right">
+                  <a class="iframe" href= "{% url 'crowdclass:ex_parents' pid %}" class="iframe" name="iframe" width ="600" height="700" style="background: white;"><img src="{% static "crowdclass/images/Examples.png" %}" alt="examples"></a>
+                </li>
+                <li class="right">
+                  <a href="{% url 'crowdclass:restart' 1 pid %}"><img src="{% static "crowdclass/images/Restart.png" %}" alt="restart"></a>
+                </li>
+                <li class="left">
+                  <img src="{% static "crowdclass/images/DECaLs.png" %}" alt="decals">
+                </li>
+                <li class="left">
+                  <img src="{% static "crowdclass/images/Invert.png" %}" alt="invert" >
+                </li>
+              </ul>
+          </div>
+          <div class="direction">
+            Note: Please always classify the galaxy in the center of the image.
+          </div>
+          <div class="question">
+            <h3>Spiral</h3>
+            <div class="questionsentence">{{ spiral.question_text }}</div>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+              
+              <div class="buttons01">
+                <div class="icon">
+                  <form action="{% url 'crowdclass:spiral' spiral.id pid %}" method="post">
+					{% csrf_token %}
+					<input type="image" src="{% static "crowdclass/images/yesbutton.png" %}" alt="submit"  name="choice" value="yes"/>
+					<input type="image" src="{% static "crowdclass/images/nobutton.png" %}" alt="submit"  name="choice" value="no"/>
+					</form>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

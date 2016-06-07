@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">
+                 Which of the following topics is NOT an example of something that scientists can learn by studying galaxy morphology (shapes + color)? 
+                 </h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">The level of star formation activity in the galaxy.<br>
+          <input type="radio" name="choice" value="1">The relative number of gravitationally lensed objects in this galaxy.<br>
+          <input type="radio" name="choice" value="-1">The stage that the galaxy is in its formation history.<br>
+          <input type="radio" name="choice" value="-1">The chemical compositions of the stars in the galaxy (metal-rich or metal poor).<br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+
+
+

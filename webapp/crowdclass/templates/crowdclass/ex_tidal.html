@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/file2_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   <title>Galaxt Zoo</title>
+  </head>
+  <body>
+       <div class="help">
+            <h1 class="heading">Help</h1>
+            <p class="text">
+              Now you can look at the larger picture — if the galaxy is colliding with another, click "merger." If there's no visible second system, but long streams of stars or gas are visible then click "tidal debris." "Both" and "Neither" are your other options. Click on the images to see larger examples.
+            </p>
+            <div class="examples">
+              <h3 class="sub-heading">Example</h3>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/merging0.png"%}"alt="samlesmooth">
+                      <h4>Merging</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/merge01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/merge02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/tidal0.png"%}" alt="samlesmooth">
+                      <h4>Tidal debris</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/tidal01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/tidal02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/both0.png"%}" alt="samlesmooth">
+                      <h4>Both</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/both01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/both02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

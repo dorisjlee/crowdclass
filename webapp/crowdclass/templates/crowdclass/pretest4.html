@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/pretest_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title>Crowdclass</title>
+  </head>
+  <body>
+  <div class="main">
+      <div class="question">
+                 <h2 class="heading">A gravitational lens is:</h2>
+
+        <br>
+        <br>
+    <div>
+    <form action="{% url 'crowdclass:pretest' qid %}" method="POST">
+        {% csrf_token %}
+        <input type="radio" name="choice" value="-1">a galaxy that have a intrinsic lens-shape that resulting from the collision with another galaxy.<br>
+          <input type="radio" name="choice" value="-1">a galaxy that have a intrinsic lens-shape that resulting stellar nucleosynthesis of the host stars.<br>
+          <input type="radio" name="choice" value="-1">a  phenomenon that results from Earth's gravitational forces distorts the lens of the telescope.<br>
+          <input type="radio" name="choice" value="1">a phenomenon that results from light being bent after passes through a massive object foreground object.<br>
+          <input type="radio" name="choice" value="?">I don't know.<br>
+          <input type="image" src="{% static "crowdclass/images/next.png" %}" alt="submit"  /><br>
+      </form>
+    </div>
+    
+      
+    </div>
+       </div>
+       
+  </body>
+</html>
+
+
+
+
+
+
+

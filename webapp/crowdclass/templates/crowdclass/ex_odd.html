@@ -1,0 +1,113 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type= "text/css" href="{% static 'crowdclass/file2_style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   <title>Galaxt Zoo</title>
+  </head>
+  <body>
+        <div class="help">
+            <h1 class="heading">Help</h1>
+            <p class="text">
+              These are examples of galaxy morphology that are rare, but still important to note when you see them. You can select more than one option if you see multiple features in the same galaxy. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Irregular galaxies have shapes that are neither smooth ellipses or well-behaved spirals, but look more like a chaotic blob. Dust lanes are thin, dark features across a galaxy that resemble shadows. Overlapping galaxies occur when two galaxies appear to be located at least partially on top of each other, but where you don't see any distortions or features that would indicate a merger. Click to see larger images.
+            </p>
+            <div class="examples">
+              <h3 class="sub-heading">Example</h3>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/none0.png"%}"alt="samlesmooth">
+                      <h4>None</h4>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/ring00.png"%}" alt="samlesmooth">
+                      <h4>Ring</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/ring01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/ring02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/lens0.png"%}" alt="samlesmooth">
+                      <h4>Lens or arc</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/lens01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/lens02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/irregular0.png"%}" alt="samlesmooth">
+                      <h4>Irregular</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/irregular01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/irregular02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/other0.png"%}" alt="samlesmooth">
+                      <h4>Other</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/other01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/other02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/dust0.png"%}" alt="samlesmooth">
+                      <h4>Dust lane</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/dust01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/dust02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>
+                      <img src="{% static "crowdclass/images/overlapping0.png"%}" alt="samlesmooth">
+                      <h4>overlapping</h4>
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/overlapping01.png"%}" alt="smooth">
+                    </li>
+                    <li>
+                      <img src="{% static "crowdclass/images/overlapping02.png"%}" alt="smooth">
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+    </div>
+  </body>
+</html>
