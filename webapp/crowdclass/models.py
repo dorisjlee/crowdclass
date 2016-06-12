@@ -6,7 +6,7 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 from django.contrib.auth.models import User
-# from crowdclass.models import Question, Round, Edge, Bulge, Bar, Pattern, Sa, Sa_num, Prominence, Tidal, Odd, Parent
+
 
 
 @python_2_unicode_compatible
@@ -74,7 +74,7 @@ class PrePostTest(models.Model):
 
 # Participant oversees all UserSessions for a user.
 # Keeps track of total score, difficulty, and the number of UserSessions created.
-# Also keeps track of if the user has previously seen the 
+# Also keeps track of if the user has previously seen the question
 class Participant(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_index = True)
     pub_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
@@ -95,7 +95,6 @@ class Participant(models.Model):
     tidal_count = models.IntegerField(default=0)
 
     introduction_count = models.IntegerField(default=0)
-    # elliptical_example = models.BooleanField(default=False)
     
 
 class UserSession(models.Model):
@@ -180,17 +179,6 @@ class UserSession(models.Model):
     lens_description_time = models.DateTimeField(blank=True,null=True)
     lens_hint = models.BooleanField(default=False)
     lens_correct = models.IntegerField(default=0)
-    # tidal 
-    # tidal_choice = models.CharField(max_length=200, blank=True)
-    # tidal_question_id = models.IntegerField(blank=True, null=True)
-    # tidal_time = models.DateTimeField(blank=True,null=True)
-    # tidal_example = models.NullBooleanField(blank=True)
-    # odd 
-    # odd_choice = models.CharField(max_length=200, blank=True)
-    # odd_question_id = models.IntegerField(blank=True, null=True)
-    # odd_time = models.DateTimeField(blank=True,null=True)
-    # odd_example = models.NullBooleanField(blank=True)
-
     restart = models.DateTimeField(blank=True, null=True)
     restart_count = models.IntegerField(default=0)
 
@@ -198,6 +186,7 @@ class UserSession(models.Model):
 
 # Easy:0, Medium:1, Hard:2
 # Decription page only shows up in the level denoted by difficulty
+# All the class below holds the description text.
 
 class Introduction(models.Model):
     heading = models.CharField(max_length=10000, null=True)
@@ -270,8 +259,6 @@ class LensDescription(models.Model):
     score = models.IntegerField(default=2)
     image = models.IntegerField(blank=True, null=True)
     caption = models.CharField(max_length=500,blank=True)
-
-
 
 class Elliptical(models.Model):
     question_text = models.CharField(max_length=500)
@@ -369,18 +356,6 @@ class Lens(models.Model):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
-# # class Prominence(models.Model):
-#     question_text = models.CharField(max_length=500)
-#     hint = models.CharField(max_length=500,blank=True)
-    # difficulty = models.IntegerField(default=0)
-#     answer = models.BooleanField()
-#     pub_date = models.DateTimeField('date published',blank=True,null=True)
-#     def __str__(self):
-#         return self.question_text
-#     def was_published_recently(self):
-#         now = timezone.now()
-#         return now - datetime.timedelta(days=1) <= self.pub_date <= now
-
 class Tidal(models.Model):
     question_text = models.CharField(max_length=500)
     hint = models.CharField(max_length=500,blank=True)
@@ -392,18 +367,6 @@ class Tidal(models.Model):
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
-
-# # class Odd(models.Model):
-#     question_text = models.CharField(max_length=500)
-#     hint = models.CharField(max_length=500,blank=True)
-    # difficulty = models.IntegerField(default=0)
-#     answer = models.BooleanField()
-#     pub_date = models.DateTimeField('date published',blank=True,null=True)
-#     def __str__(self):
-#         return self.question_text
-#     def was_published_recently(self):
-#         now = timezone.now()
-#         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)

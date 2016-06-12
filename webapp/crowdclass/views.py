@@ -13,6 +13,8 @@ from django.utils import timezone
 from random import randint
 import random
 
+# Global variables
+
 #Threshold for transitioning to the next level
 THRES_MEDIUM = 21 # max=23
 THRES_HARD  =  20 # max=22
@@ -22,16 +24,6 @@ r = 0.5
 random.shuffle(IMAGE_LIST, lambda: r)
 
 DURATION = 30 # in minutes
-
-
-class IndexView(generic.ListView):
-    template_name = 'crowdclass/index.html'
-    context_object_name = 'question_list'
-
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Elliptical.objects.all()
-
 
 def timesup(request):
     return render(request, 'crowdclass/timesup.html')
@@ -59,20 +51,6 @@ def create_user(request):
     context = {'qid':qid}
     return render(request, 'crowdclass/pretest%d.html' % qid, context)
 
-    # session.parent_time = timezone.now()
-    # session.parent_question_id = 1
-    
-    # context = {'level':participant.level}
-    # return render(request, 'crowdclass/transition.html',context)
-    # image = randint(0,99)
-    # session.image = image
-    # session.save()
-    # return introduction(request)
-
-    # pic = "crowdclass/images/%d.png" % session.image
-    # context = {'elliptical':Elliptical.objects.get(id=1),'pic': pic, 'pid':session.image}
-    # return render(request, 'crowdclass/elliptical_description.html', context)
-
 def introduction(request):
     current_user = request.user
 
@@ -80,10 +58,6 @@ def introduction(request):
 
     for u in UserSession.objects.all().filter(user=current_user):
         pids.append(u.image)
-
-    # new_image = randint(0,99)
-    # while (new_image in pids):
-    #     new_image = randint(0,99)
 
     participant = Participant.objects.all().filter(user=current_user)[0]
     participant.count += 1
@@ -161,6 +135,7 @@ def introduction(request):
             context = {'elliptical':question,'image': image, 'caption':intro.caption,'heading':intro.heading,'description_text_1':intro.description_text_1, 'description_text_2':intro.description_text_2,'description_text_3':intro.description_text_3,'pid':session.image}
             return render(request, 'crowdclass/introduction.html', context)
 
+# Randomly shuffles and proceeds with the pretest questions.
 def pretest(request, pretest_id):
     current_user = request.user
     preSession = PrePostTest.objects.all().filter(user=current_user)[0]
@@ -218,6 +193,7 @@ def pretest(request, pretest_id):
         context = {'qid':qid}
         return render(request, 'crowdclass/pretest%d.html' % qid, context)
 
+# Randomly shuffles and proceeds with the post test questions.
 def posttest(request, posttest_id):
     current_user = request.user
     postSession = PrePostTest.objects.all().filter(user=current_user)[0]
@@ -298,6 +274,9 @@ def restart(request, question_id, pid):
     pic = "crowdclass/images/%d.png" % session.image
     context = {'elliptical':question,'pic': pic, 'pid':session.image}
     return render(request, 'crowdclass/elliptical.html', context)
+
+# def to_(example): are for the transition from its respective description page to the question/classfication page.
+# def (example): leads to either 1. the description page of a following class or 2. lead directly to another class
 
 def to_elliptical(request, question_id, pid):
     current_user = request.user
