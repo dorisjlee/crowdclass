@@ -1,6 +1,7 @@
-# Crowdclass
+# Crowdclass: Designing Classification-Based Citizen Science Learning Modules
+
 #### Doris Jung-Lin Lee, Joanne Lo, Moonhyok Kim, Eric Paulos 
-Crowdclass is a novel method that integrates the learning of advanced scientific concepts with the crowdsourcing microtask of image classification. The system is written in Django 1.9. The Juptyer notebooks used to conduct our analysis is provided in the ``analysis`` folder. 
+Crowdclass is a novel method that integrates the learning of advanced scientific concepts with the crowdsourcing microtask of image classification. The system is written in Django 1.9. The Juptyer notebooks used to conduct our analysis is provided in the ``analysis`` folder. For more details see our [HCOMP paper](dorisjunglinlee.com/files/crowdclass.pdf). 
 
 ##Requirements:
 
@@ -13,7 +14,7 @@ Crowdclass is a novel method that integrates the learning of advanced scientific
   - install with `sudo pip install django`
 
 
-## Starting the App
+## Starting the Web-App
 
 - clone the git repository:
     - e.g. `git clone https://github.com/dorisjlee/crowdclass.git`
